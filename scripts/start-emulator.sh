@@ -14,7 +14,7 @@ OPT_SKIP_AUTH=${SKIP_AUTH:-true}
 AUTH_FLAG=
 
 # Screen resolution for the emulator
-SCREEN_RESOLUTION="1280x800"
+SCREEN_RESOLUTION="800x1280"
 
 # Start the ADB server to listen on all interfaces
 echo "Starting the ADB server ..."
