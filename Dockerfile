@@ -1,3 +1,5 @@
+# Base image: OpenJDK 18
+# Slim version of the Java Development Kit (JDK) 18
 FROM openjdk:18-jdk-slim
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -25,10 +27,10 @@ LABEL version "1.0.0"
 # Arguments that can be overriden at build-time.
 ARG INSTALL_ANDROID_SDK=1
 ARG API_LEVEL=33
-ARG IMG_TYPE=google_apis
+ARG IMG_TYPE=android-automotive
 ARG ARCHITECTURE=x86_64
 ARG CMD_LINE_VERSION=9477386_latest
-ARG DEVICE_ID=pixel
+ARG DEVICE_ID=automotive_1024p_landscape
 ARG GPU_ACCELERATED=false
 
 # Environment variables.
@@ -79,4 +81,5 @@ COPY scripts/emulator-monitoring.sh /opt/
 RUN chmod +x /opt/*.sh
 
 # Set the entrypoint
+# Launches the emulator when the container starts
 ENTRYPOINT ["/opt/start-emulator.sh"]
